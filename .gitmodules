@@ -1,0 +1,33 @@
+[submodule "classes/intro-html-css"]
+	path = classes/intro-html-css
+	url = git@github.com:gdichicago/intro-html-css.git
+[submodule "classes/js205"]
+	path = classes/js205
+	url = git@github.com:gdichicago/js205.git
+[submodule "classes/js204"]
+	path = classes/js204
+	url = git@github.com:gdichicago/js204.git
+[submodule "classes/js203"]
+	path = classes/js203
+	url = git@github.com:gdichicago/js203.git
+[submodule "classes/js201"]
+	path = classes/js201
+	url = git@github.com:gdichicago/js201.git
+[submodule "classes/js202"]
+	path = classes/js202
+	url = git@github.com:gdichicago/js202.git
+[submodule "operations"]
+	path = operations
+	url = git@github.com:gdichicago/operations.git
+[submodule "pairup"]
+	path = pairup
+	url = git@github.com:gdichicago/pairup.git
+[submodule "classes/js101"]
+	path = classes/js101
+	url = git@github.com:gdichicago/js101.git
+[submodule "classes/intermediate-html-css"]
+	path = classes/intermediate-html-css
+	url = git@github.com:gdichicago/intermediate-html-css.git
+[submodule "classes/git-github"]
+	path = classes/git-github
+	url = git@github.com:gdichicago/git-github.git
