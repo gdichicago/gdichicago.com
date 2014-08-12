@@ -4,20 +4,14 @@ This is a massive mothership respoitory that contains submodules of all the mate
 
 It also contains the static pages for the site.
 
-## CDN
-
-This site uses the Amazon CDN. It's lovely.
-
-There are some GDI assets already stored on the CDN, you can find them [here](https://gitlab.com/gdichicago/website-assets)
-
 ## How it works
 
 ### Adding new submodules
 
-You want to add all new submodules in the `public` folder.
+You want to add all new submodules in the root folder of the repo.
 
 ```
-git submodule add https://gitlab.com/gdichicago/pairup.git public/pairup
+git submodule add https://gitlab.com/gdichicago/pairup.git pairup
 ```
 
 **All submodules must have the content compiled and read for upload.**
@@ -38,12 +32,4 @@ And that will get you sorted.
 
 ### Uploading to AWS
 
-You'll need Liz to do this for you since she has her own AWS credentials stored in a secret place.
-
-But so Liz doesn't forget, it works like this:
-
-```
-s3_website push --site public
-```
-
-And requires the `s3_website` gem.
+Changes merged into the `stable` branch (including submodules) are automatically deployed.
