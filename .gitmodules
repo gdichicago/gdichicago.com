@@ -31,3 +31,6 @@
 [submodule "classes/git-github"]
 	path = classes/git-github
 	url = git@github.com:gdichicago/git-github.git
+[submodule "classes/intro-to-command-line"]
+	path = classes/intro-to-command-line
+	url = git@github.com:gdichicago/intro-to-command-line.git
