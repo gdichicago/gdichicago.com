@@ -14,21 +14,9 @@ You want to add all new submodules in the root folder of the repo.
 git submodule add https://gitlab.com/gdichicago/pairup.git pairup
 ```
 
+This will add the content to the `pair up` folder, which will be accessible at `gdichicago.com/pairup`.
+
 **All submodules must have the content compiled and read for upload.**
-
-If that content is on a branch (I use `site`), you'll need to:
-
-```
-cd public/pairup
-git checkout -b site
-git pull origin site
-cd ../..
-git add .
-git commit -m "updated submodule to site branch"
-git push origin master
-```
-
-And that will get you sorted.
 
 ### Uploading to AWS
 
