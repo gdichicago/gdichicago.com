@@ -34,3 +34,6 @@
 [submodule "classes/intro-to-command-line"]
 	path = classes/intro-to-command-line
 	url = git@github.com:gdichicago/intro-to-command-line.git
+[submodule "classes/ruby"]
+	path = classes/ruby
+	url = git@github.com:gdichicago/gdi-ruby.git
