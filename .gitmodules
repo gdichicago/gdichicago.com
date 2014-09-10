@@ -40,3 +40,6 @@
 [submodule "classes/intro-databases"]
 	path = classes/intro-databases
 	url = git@github.com:gdichicago/gdi-intro-databases.git
+[submodule "classes/intro-rails"]
+	path = classes/intro-rails
+	url = git@github.com:gdichicago/gdi-rails.git
