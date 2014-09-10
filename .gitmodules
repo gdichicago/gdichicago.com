@@ -37,3 +37,6 @@
 [submodule "classes/ruby"]
 	path = classes/ruby
 	url = git@github.com:gdichicago/gdi-ruby.git
+[submodule "classes/intro-databases"]
+	path = classes/intro-databases
+	url = git@github.com:gdichicago/gdi-intro-databases.git
