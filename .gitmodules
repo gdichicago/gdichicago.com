@@ -46,3 +46,6 @@
 [submodule "int-html-css"]
 	path = int-html-css
 	url = https://github.com/gdichicago/gdi-boulder-intermediate-htmlcss.git
+[submodule "classes/int-html-css"]
+	path = classes/int-html-css
+	url = https://github.com/gdichicago/gdi-boulder-intermediate-htmlcss.git
