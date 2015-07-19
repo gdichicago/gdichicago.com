@@ -49,6 +49,6 @@
 [submodule "classes/int-html-css"]
 	path = classes/int-html-css
 	url = https://github.com/gdichicago/gdi-boulder-intermediate-htmlcss.git
-[submodule "classes/intro-python"]
-	path = classes/intro-python
-	url = https://github.com/gdichicago/gdi-intro-python.git
+[submodule "classes/intro-algos"]
+	path = classes/intro-algos
+	url = https://github.com/gdichicago/intro-algos.git
