@@ -79,7 +79,7 @@ header a {
 /* line 69, ../../sass/main.scss */
 header a:before {
   padding: 0px 10px;
-  content: '7';
+  content: '*';
   font-family: 'EntypoRegular';
   font-size: 1.5em;
 }
@@ -133,7 +133,7 @@ article .symbol {
 /* line 119, ../../sass/main.scss */
 article ul li:before {
   padding: 0px 10px;
-  content: '7';
+  content: '*';
   font-family: 'EntypoRegular';
   font-size: 1.5em;
 }
