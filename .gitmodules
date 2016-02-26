@@ -42,7 +42,7 @@
 	url = git@github.com:gdichicago/gdi-rails.git
 [submodule "classes/int-html-css"]
 	path = classes/int-html-css
-	url = git@github.com:gdichicago/gdi-boulder-intermediate-htmlcss.git
+	url = https://github.com/gdichicago/gdi-boulder-intermediate-htmlcss.git
 [submodule "classes/intro-algos"]
 	path = classes/intro-algos
 	url = git@github.com:gdichicago/intro-algos.git
