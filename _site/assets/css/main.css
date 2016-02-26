@@ -1,0 +1,150 @@
+/* baseFontSize assumes you're using the fontSize mixin and desire ems */
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url("https://s3.amazonaws.com/gdichicago-cdn/font/Entypo-webfont.eot");
+  src: url("https://s3.amazonaws.com/gdichicago-cdn/font/Entypo-webfont.eot?#iefix") format("embedded-opentype"), url("https://s3.amazonaws.com/gdichicago-cdn/font/Entypo-webfont.woff") format("woff"), url("https://s3.amazonaws.com/gdichicago-cdn/font/Entypo-webfont.ttf") format("truetype"), url("https://s3.amazonaws.com/gdichicago-cdn//font/Entypo-webfont.svg#EntypoRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 8, ../../sass/main.scss */
+html, body, button, input, select, textarea,
+.pure-g [class*="pure-u"],
+.pure-g-r [class*="pure-u"] {
+  color: #272727;
+  background-color: #f4f4f4;
+  font-weight: 300;
+  font-size: 1.1em;
+  font-family: "clavo", "Georgia", serif;
+}
+
+/* line 16, ../../sass/main.scss */
+a {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #5b5b5b;
+  font-weight: 400;
+  border: none;
+  text-decoration: none;
+}
+
+/* line 24, ../../sass/main.scss */
+a:hover {
+  color: #f25c65;
+}
+
+/* line 28, ../../sass/main.scss */
+code {
+  padding: 5px;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* line 34, ../../sass/main.scss */
+ol, ul, li {
+  margin: 0px 20px;
+  padding: 10px;
+}
+
+/* line 41, ../../sass/main.scss */
+header {
+  padding: 20px;
+}
+/* line 44, ../../sass/main.scss */
+header h1, header h2, header h3 {
+  padding: 20px 0px;
+  text-align: center;
+}
+/* line 49, ../../sass/main.scss */
+header h1 {
+  color: #f25c65;
+  font-weight: 800;
+  font-size: 2.75em;
+  margin: 100px 0px 0px 0px;
+}
+/* line 56, ../../sass/main.scss */
+header h2 {
+  font-weight: 300;
+  font-size: 2.2em;
+}
+/* line 61, ../../sass/main.scss */
+header h3 {
+  font-size: 1.1em;
+}
+/* line 65, ../../sass/main.scss */
+header a {
+  padding: 20px;
+}
+/* line 69, ../../sass/main.scss */
+header a:before {
+  padding: 0px 10px;
+  content: '*';
+  font-family: 'EntypoRegular';
+  font-size: 1.5em;
+}
+/* line 73, ../../sass/main.scss */
+header p {
+  text-align: center;
+}
+
+/* line 80, ../../sass/main.scss */
+article {
+  padding: 20px;
+  margin: 0px 0px 20px 0px;
+  line-height: 1.6em;
+  border-top: 1px dotted #5b5b5b;
+}
+/* line 86, ../../sass/main.scss */
+article p {
+  padding: 10px 0px;
+}
+/* line 90, ../../sass/main.scss */
+article em {
+  font-style: italic;
+}
+/* line 94, ../../sass/main.scss */
+article strong {
+  font-weight: 700;
+}
+/* line 98, ../../sass/main.scss */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  font-weight: 700;
+  padding: 30px 0px 10px 0px;
+}
+/* line 103, ../../sass/main.scss */
+article h3 {
+  font-size: 1.65em;
+}
+/* line 107, ../../sass/main.scss */
+article h4 {
+  font-size: 1.32em;
+}
+/* line 111, ../../sass/main.scss */
+article h5 {
+  font-size: 1.21em;
+}
+/* line 115, ../../sass/main.scss */
+article .symbol {
+  font-family: 'EntypoRegular';
+  font-size: 1.65em;
+  padding: 0px 10px;
+}
+/* line 119, ../../sass/main.scss */
+article ul li:before {
+  padding: 0px 10px;
+  content: '*';
+  font-family: 'EntypoRegular';
+  font-size: 1.5em;
+}
+
+/* line 126, ../../sass/main.scss */
+footer {
+  padding: 40px 0px;
+  font-size: 0.66em;
+  text-align: center;
+}
+/* line 130, ../../sass/main.scss */
+footer p {
+  padding: 20px;
+}
