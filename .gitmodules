@@ -1,48 +1,48 @@
 [submodule "classes/intro-html-css"]
 	path = classes/intro-html-css
-	url = git@github.com:gdichicago/intro-html-css.git
+	url = https://github.com/gdichicago/intro-html-css.git
 [submodule "classes/js205"]
 	path = classes/js205
-	url = git@github.com:gdichicago/js205.git
+	url = https://github.com/gdichicago/js205.git
 [submodule "classes/js204"]
 	path = classes/js204
-	url = git@github.com:gdichicago/js204.git
+	url = https://github.com/gdichicago/js204.git
 [submodule "classes/js203"]
 	path = classes/js203
-	url = git@github.com:gdichicago/js203.git
+	url = https://github.com/gdichicago/js203.git
 [submodule "classes/js201"]
 	path = classes/js201
-	url = git@github.com:gdichicago/js201.git
+	url = https://github.com/gdichicago/js201.git
 [submodule "classes/js202"]
 	path = classes/js202
-	url = git@github.com:gdichicago/js202.git
+	url = https://github.com/gdichicago/js202.git
 [submodule "operations"]
 	path = operations
-	url = git@github.com:gdichicago/operations.git
+	url = https://github.com/gdichicago/operations.git
 [submodule "pairup"]
 	path = pairup
-	url = git@github.com:gdichicago/pairup.git
+	url = https://github.com/gdichicago/pairup.git
 [submodule "classes/js101"]
 	path = classes/js101
-	url = git@github.com:gdichicago/js101.git
+	url = https://github.com/gdichicago/js101.git
 [submodule "classes/intermediate-html-css"]
 	path = classes/intermediate-html-css
-	url = git@github.com:gdichicago/intermediate-html-css.git
+	url = https://github.com/gdichicago/intermediate-html-css.git
 [submodule "classes/intro-to-command-line"]
 	path = classes/intro-to-command-line
-	url = git@github.com:gdichicago/intro-to-command-line.git
+	url = https://github.com/gdichicago/intro-to-command-line.git
 [submodule "classes/ruby"]
 	path = classes/ruby
-	url = git@github.com:gdichicago/gdi-ruby.git
+	url = https://github.com/gdichicago/gdi-ruby.git
 [submodule "classes/intro-databases"]
 	path = classes/intro-databases
-	url = git@github.com:gdichicago/gdi-intro-databases.git
+	url = https://github.com/gdichicago/gdi-intro-databases.git
 [submodule "classes/intro-rails"]
 	path = classes/intro-rails
-	url = git@github.com:gdichicago/gdi-rails.git
+	url = https://github.com/gdichicago/gdi-rails.git
 [submodule "classes/int-html-css"]
 	path = classes/int-html-css
 	url = https://github.com/gdichicago/gdi-boulder-intermediate-htmlcss.git
 [submodule "classes/intro-algos"]
 	path = classes/intro-algos
-	url = git@github.com:gdichicago/intro-algos.git
+	url = https://github.com/gdichicago/intro-algos.git
