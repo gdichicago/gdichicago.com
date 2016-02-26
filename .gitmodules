@@ -46,3 +46,6 @@
 [submodule "classes/intro-algos"]
 	path = classes/intro-algos
 	url = https://github.com/gdichicago/intro-algos.git
+[submodule "classes/git-github"]
+	path = classes/git-github
+	url = https://github.com/gdichicago/git-github.git
