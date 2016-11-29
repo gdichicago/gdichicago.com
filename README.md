@@ -10,7 +10,7 @@ After you've run the script, all courses contained in its source will be availab
 
 For example, I added the Intro to Git/Github course to my script, so now I see the directory `courses/git-github/` locally. In `courses/index.html`, I can link to the course slides like so:
 
-```
+```html
 <a href="git-github">Our awesome Intro to Git/Github Course!</a>
 ```
 For more examples, view `courses/index.html`.
