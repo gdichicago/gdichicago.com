@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Intro to AngularJS ~ Girl Develop It</title>
+
+    <meta name="description" content="Girl Develop It Intro to Angular Class. Alexandra Hoefinger (@ahoef) developed and taught this workshop for GDI Philly">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --><link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Opening -->
+        <section>
+          <img src="img/circle-gdi-logo.png" alt="GDI Logo" class="noborder"/>
+          <h1>Intro to AngularJS</h1>
+        </section>
+
+        <!-- Welcome-->
+        <section class="hide-pdf">
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Agenda &mdash; Day 1</h3>
+           <!-- <p>This class will be a combo of lecture + exercises. It is 4 hours long, split over 2 days</p> -->
+          <ul>
+            <li>Introductions</li>
+            <li>Overview of MVC patterns</li>
+            <li>Overview of a basic Angular app</li>
+            <li>Built-in Directives and Expressions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Agenda &mdash; Day 2</h3>
+          <ul>
+            <li>Controllers &amp; $scope</li>
+            <li>Dependency Injection</li>
+            <li>Beyond the Basics</li>
+            <li>Angular 2.0</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Introductions</h3>
+          <div class = "left-align">
+          <p>Tell us about yourself.</p>
+          <ul>
+            <li>Who are you?</li>
+            <li>What do you hope to get out of the class?</li>
+            <li>Which of your web projects are you most proud of?</li>
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>What is AngularJS?</h3>
+          <ul>
+            <li>A client-side JavaScript framework for extending HTML in small &#8594; large apps</li>
+            <li>Initially released in 2009 by Google</li>
+            <li>Used in production by Google, Virgin America, HBO, msnbc, Nike, Urban Outfitters, &amp; more</li>
+            <li>Known for data-binding, directives, dependency injection, &amp; more</li>
+            <li>Falls within the family of MV* frameworks, and is often compared to Ember.js, Backbone.js, &amp; React</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>What is a MV* framework?</h3>
+          <ul>
+            <li>A variation of an MVC (Model View Controller)</li>
+            <li>Model &mdash; a type of data to model, like a user, account, photo, or note</li>
+            <li>View &mdash; the markup &amp; templates for the UI</li>
+            <li>Controller &mdash; handles input &amp; updates state of model</li>
+            <li>MVC, MVVM, MVVMCS, ...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>What is a MV* framework?</h3>
+          <img src="img/500px-MVC-Process.png" alt="Model updates view, user sees view, user uses controller, controller manipulates model">
+          <p><small>Image Credit: <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/500px-MVC-Process.svg.png" target="_blank">Wikimedia</a></small></p>
+        </section>
+
+        <section>
+          <h3>What is a MV* framework?</h3>
+          <ul>
+            <li>Main features are some combination of routing, data binding, templates/views, models &amp; data access</li>
+            <li>Can be client- or server-side, and not specific to JavaScript</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>What type of MV* is Angular?</h3>
+          <ul>
+            <li>There's much debate on what exactly Angular is</li>
+            <li>Angular has evolved since release, and developers implement it differently</li>
+            <li>Many agree that it is an MVW (Model View Whatever)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Why Use Angular?</h3>
+          <ul>
+            <li>Easy to get up and running</li>
+            <li>Code organization</li>
+            <li>Speedy websites</li>
+            <li>Unit testing</li>
+            <li>Many, many resources</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>An example Angular App</h3>
+          <p>A basic <a href="demo-files/completed-exercises/todo-list/todo-list.html" target="_blank">todo list app</a></p>
+          <p>The <a href="demo-files/completed-exercises/todo-list/todo-list.txt" target="_blank">app's markup</a></p>
+          <br />
+          <ul>
+            <li>You'll notice {{ }} and attributes beginning with ng-</li>
+            <li>Those are the key components of an Angular View!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Including Angular</h3>
+          <p><a href="https://angularjs.org/">Download</a> and serve local file</p>
+<pre><code>&lt;script src="js/angular.min.js"&gt;&lt;script&gt;</code></pre>
+          <p>OR</p>
+          <p>Use a content distribution network for a cached file</p>
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <section>
+          <h3>Built-In Directives</h3>
+          <p>The Angular library looks for these attribute in your markup to know it should render Angular code</p>
+<pre><code>&lt;body ng-app&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+          <p><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is a required directive used to identify the root element and determine scope</p>
+          <!-- <small>(We'll cover what this code does shortly!)</small> -->
+        </section>
+
+        <section>
+          <h3>Expressions</h3>
+          <p>A way to insert data into html via a JavaScript string, number, object, or array</p>
+<pre><code>&lt;body ng-app&gt;
+  &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
+  &lt;p&gt;My cat's name is {{ "Admiral " + "Snuggles" }}&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+        </section>
+
+          <section>
+            <h3>Exercise</h3>
+            <ul>
+              <li><a href="demofiles.zip">Download the demo files</a></li>
+              <li>Open exercises/hello-world/hello-world.html in your text editor</li>
+              <li>Import the Angular library</li>
+              <li>Assign your root element with ng-app</li>
+              <li>Include html with a few string &amp; number expressions </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Two-Way Data Binding</h3>
+            <p>The <a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model</a> directive binds the value of an <code>input</code>, <code>select</code>, or <code>textarea</code> to an object that can be used in an expression</p>
+<pre><code>&lt;body ng-app&gt;
+  &lt;label>Name:&lt;/label&gt;
+  &lt;input type="text" ng-model="yourName"&gt;
+  &lt;hr&gt;
+  &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Two-Way Data Binding</h3>
+            <p>Expressions can be inserted as the value html attributes as well as text within html tags</p>
+<pre><code>&lt;body ng-app&gt;
+  &lt;label>Name:&lt;/label&gt;
+  &lt;input type="text" ng-model="user.status"&gt;
+  &lt;hr&gt;
+  &lt;h1 class="status-text-{{user.status}}"&gt;Your status is:  {{user.status}}!&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>Exercise</h3>
+            <ul>
+              <li>In hello-world.html, within your ng-app, add the markup for a form input field</li>
+              <li>Also add the markup for a heading
+              <li>Bind the value of the input to text within your heading tags by using ng-model </li>
+              <li>Try to add a few more data-bindings with ng-model!</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-repeat</h3>
+            <p>ng-repeat is Angular's way of looping</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;ul&gt;
+    &lt;li ng-repeat="item in ['Sal', 'Jo', 'Amir', 'Maria']"&gt;
+      {{item}} is my friend.
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-if</h3>
+            <p>ng-if is Angular's <code>if</code> statement</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;p ng-if="'Sal' === 'Sal'"&gt;True!&lt;/p&gt;
+  &lt;p ng-if="'Sal' === 'Jo'"&gt;False!&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-show/ng-hide</h3>
+            <p><code>ng-show</code> &amp; <code>ng-hide</code> toggle an element's display based on value</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;p ng-show="5> 2"&gt;Five is greater than two.&lt;/p&gt;
+  &lt;p ng-show="2> 5"&gt;Two is greater than five.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+            <small>Note: if the value of <code>ng-show</code> evaluates to false, the element will still live in the DOM</small>
+          </section>
+
+          <section>
+            <h3>Exercise</h3>
+            <ul>
+              <li>In hello-world.html, within your ng-app, use ng-repeat to loop through an array of your favorite TV shows, and display each one on the page</li>
+              <li>Use ng-show/ng-hide or ng-if to conditionally display an image of your favorite celebrity</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-init</h3>
+            <p><code>ng-init</code> sets an initial value</p>
+<pre><code class="xml">&lt;head&gt;
+  &lt;!-- add icon font library --&gt;
+  &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen=false" class="mobile-nav"&gt;
+    &lt;button&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-click</h3>
+            <p>Angular's click listener</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+            <p><small><strong>Bonus!</strong> Angular will make your <code>ng-click</code> elements work with the keyboard too.</small></p>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-class</h3>
+            <p><code>ng-class</code> conditionally adds a class based on value</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+
+    &lt;p ng-class="{'highlight': isOpen}"&gt;My Menu&lt;/p&gt;
+
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+          </section>
+
+          <section>
+            <h3>More Built-In Directives: <br />ng-class</h3>
+            <p>Here's another example:</p>
+<pre><code class="xml">&lt;body ng-app&gt;
+  &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+    &lt;button ng-click="isOpen = !isOpen"&gt;
+      &lt;i class="fa" ng-class="{
+        'fa-caret-square-o-down': !isOpen,
+        'fa-caret-square-o-up': isOpen}"&gt;
+      &lt;/i&gt;
+    &lt;/button&gt;
+    &lt;ul ng-show="isOpen"&gt;
+      &lt;li&gt;Home&lt;/li&gt;
+      &lt;li&gt;About&lt;/li&gt;
+      &lt;li&gt;Blog&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/body&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <ul>
+            <li>In hello-world.html, within your ng-app, add a new <code>section</code> or <code>div</code> where you set a value to true or false with <code>ng-init</code></li>
+            <li>Within that section/div, add a button with an <code>ng-click</code> directive that toggles the <code>ng-init</code> value</li>
+            <li>Use <code>ng-show</code> or <code>ng-hide</code> to show/hide an image of your pet (or your favorite animal) on click of your button </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Note!</h3>
+          <p>It's good to know how ng-init works, but usually you'll use a controller for that purpose</p>
+          <p class="fragment">Before we talk about controllers, let's talk about modules!</p>
+        </section>
+
+        <section>
+          <h3>Modules</h3>
+          <ul>
+            <li>Where we write pieces of the app and define dependencies</li>
+            <li>Module names are bound to <code>ng-app</code> directives</li>
+          </ul>
+<pre><code>(function(){
+  angular.module('myApp', []);
+})();
+</code></pre>
+<pre><code class="xml">&lt;body ng-app="myApp"&gt;
+  &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
+  &lt;p&gt;Our President is {{ "Barack " + "Obama" }}&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <ul>
+            <li>They're where most of the app's functionality comes from</li>
+            <li>They control the data that passes through</li>
+            <li>They're regular JavaScript Objects</li>
+            <li>There can be more than one controller in an app</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <small>in app.js</small>
+<pre><code class="js">(function(){
+  angular
+    .module('myApp', [])
+    .controller('MainController', function(){
+      this.cat = cat;
+    });
+
+  var cat = {
+    name: 'Ms. Whiskers',
+    age: 9,
+    eyes: 'blue'
+  };
+})();
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <small>in index.html</small>
+<pre><code class="xml">&lt;body ng-app="myApp"&gt;
+
+  &lt;section ng-controller="MainController as mainCtrl"&gt;
+    &lt;p&gt;My cat's name is {{mainCtrl.cat.name}}&lt;/p&gt;
+    &lt;p&gt;She has {{mainCtrl.cat.eyes}} eyes and she's
+    {{mainCtrl.cat.age}} years old.&lt;/p&gt;
+  &lt;/section&gt;
+
+&lt;/body&gt;
+</code></pre>
+          <small>The scope of the controller is only within the <code>section</code> element!</small>
+        </section>
+
+        <section>
+          <h3>Exercise &mdash; Part 1</h3>
+          <ul>
+            <li>In recipe-app/app.js, within the closure, create a module called 'recipeApp', a controller called 'RecipeController', and a variable called 'recipe'</li>
+            <li>Set the recipe var as an object with a few different properties, like 'name', 'ingredients', 'prepTime', 'cookTime', and 'directions'
+            <ul><li> Try to set one of these properties (like 'ingredients') as an array</li>
+            <li>Add two or three new properties as booleans, like 'isVegan', 'isGlutenFree', or 'isPaleo'</li></ul></li>
+            <li>Set the recipe object as a property of the controller, using the 'this' keyword</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Exercise &mdash; Part 2</h3>
+          <ul>
+            <li>In recipe-app/index.html, add an <code>ng-app</code> directive with the value of "recipeApp", and an <code>ng-controller</code> directive with the value of "RecipeController as recipeCtrl"</li>
+            <li>Include a few expressions referencing properties of the recipe object</li>
+            <li>Use <code>ng-repeat</code> to iterate over one of your array properties in the recipe object</li>
+            <li>Use <code>ng-if</code> or <code>ng-show</code> to conditionally display your boolean properties</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <p>Often your data will be stored in an array, rather than a single object like we've seen so far</p>
+<pre><code class="js">(function(){
+angular
+  .module('myApp', [])
+  .controller('MainController', function(){
+    this.cats = cats;
+  });
+
+var cats = [
+  {
+    name: 'Ms. Whiskers',
+    age: 9,
+    eyes: 'blue'
+  },
+  {
+    name: 'Melvin',
+    age: 1,
+    eyes: 'green'
+  },
+  {
+    name: 'Tootsie',
+    age: 3,
+    eyes: 'grey'
+  }
+];
+})();
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+            <p>If your data is stored in an array, you'll need to loop through it or access specific items by index number</p>
+<pre><code class="xml">&lt;body ng-app="myApp"&gt;
+  &lt;section ng-controller="MainController as mainCtrl"&gt;
+    &lt;article ng-repeat="cat in mainCtrl.cats"&gt;
+    &lt;p&gt;My cat's name is {{cat.name}}&lt;/p&gt;
+    &lt;p&gt;She has {{cat.eyes}} eyes and she's
+    {{cat.age}} years old.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Exercise &mdash; Part 3</h3>
+          <ul>
+            <li>In recipe-app/app.js, change your recipe object to an array of multiple objects and update the var name from 'recipe' to 'recipes'</li>
+            <li>In recipe-app/index.html, use <code>ng-repeat</code> to loop through your recipes array and display each one on the page</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <p>Functions can also be stored as properties</p>
+<pre><code class="js">//app.js
+angular
+  .module('todoApp', [])
+  .controller('TodoListController', function() {
+    var todoList = this;
+
+    todoList.todos = [
+      {text:'learn angular', done:true},
+      {text:'build an angular app', done:false}
+    ];
+
+    todoList.logArg = function(arg) {
+        console.log(arg);
+    };
+  });
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Controllers</h3>
+          <p>And they can be called by events!</p>
+<pre><code class="xml">&lt;!-- index.html --&gt;
+&lt;body ng-app="todoApp"&gt;
+  &lt;section ng-controller="TodoListController as todoListCtrl"&gt;
+    &lt;button ng-click="todoListCtrl.logArg('hi!')"&gt;
+      Log me!
+    &lt;/button&gt;
+  &lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <ul>
+            <li>Let's look at the todo-list/todo.js &amp; todo-list/todo-list.html</li>
+            <li>What are the functions in todo.js doing?</li>
+            <li>Which new directive in todo-list.html haven't we seen yet?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Dependency Injection</h3>
+          <ul>
+            <li>Dependencies are standalone modules that can be pulled into your project for different uses</li>
+            <li>They can be included as external files in script tags, or if you're using grunt/gulp, usually they can be included as node modules</li>
+            <li><a href="http://gregpike.net/demos/angular-local-storage/demo/demo.html">Angular Local Storage</a> is a popular module that uses the browser's local storage to persist your data without saving it to a database</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Dependency Injection</h3>
+<!-- <pre><code>&lt;script src="js/angular.localstorage.js"&gt;&lt;script&gt;</code></pre> -->
+<pre><code class="js">angular.module('todoApp', ['LocalStorageModule'])
+.controller('TodoListController', function(localStorageService) {
+  var todoList = this;
+
+  // todoList.todos = [
+  //   {text:'learn angular', done:true},
+  //   {text:'build an angular app', done:false}];
+
+  var todosInStore = localStorageService.get('myTodos');
+
+  todoList.todos = todosInStore || [];
+  todoList.addTodo = function() {
+    todoList.todos.push({text:todoList.todoText, done:false});
+    localStorageService.set('myTodos', todoList.todos);
+    todoList.todoText = '';
+  };
+
+  [...]
+});
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Exercise</h3>
+          <ul>
+            <li>Include a script tag in todo-list/todo-list.html to reference localstorage.js</li>
+            <li>In todo-list/todo.js, include <code>'LocalStorageModule'</code> as a dependency and <code>localStorageService</code> as an argument in your controller callback function </li>
+            <li>Set a var called <code>todosInStore</code> with the value of <code>localStorageService.get('myTodos')</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Exercise...continued</h3>
+          <ul>
+            <li>Comment out the array of <code>todoList.todos</code>, and set <code>todoList.todos</code> to: <code>todosInStore || []</code></li>
+            <li>Within your <code>addTodo</code> function, before the line that sets an empty string, add a function to set local storage with the array of todos as its updated (<code>localStorageService.set('myTodos', todoList.todos);</code>)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>$scope</h3>
+          <ul>
+            <li><a href="https://docs.angularjs.org/guide/scope">Angular scope</a> is an object that refers to the application model</li>
+            <li>In this workshop so far, we've been avoiding using <code>$scope</code> in favor of using <code>this</code> in our controllers to reference the application model</li>
+            <li>That's mainly because the <code>$scope</code> object is being phased out of Angular, and using <code>this</code> with <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/">'controller as' syntax</a> is now considered best practice</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>$scope</h3>
+          <ul>
+            <li>That said, at this point, we do still need to use the <code>$scope</code> object if we want to use some of the cool Angular features that come with it</li>
+            <li>For example, <code>$watch</code> is an API that watches/listens for changes in user input, and can run callback functions when changes occur</li>
+            <li>We can use <code>$scope.$watch</code> to save our checked off todo list items to local storage</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>$scope.$watch</h3>
+<pre><code>angular.module('todoApp', ['LocalStorageModule'])
+.controller('TodoListController', function($scope, localStorageService) {
+  var todoList = this;
+
+  var todosInStore = localStorageService.get('myTodos');
+  todoList.todos = todosInStore || [];
+
+  $scope.$watch('todoList.todos', function () {
+    localStorageService.set('myTodos', todoList.todos);
+  }, true);
+  todoList.addTodo = function() {
+    todoList.todos.push({text:todoList.todoText, done:false});
+    //localStorageService.set('myTodos', todoList.todos);
+    todoList.todoText = '';
+  };
+
+  [...]
+});
+</code></pre>
+        </section>
+
+
+        <section>
+          <h3>From here onward...</h3>
+          <p>There are many more things you can do with Angular!</p>
+          <ul>
+            <li>Set up <a href="http://www.ng-newsletter.com/posts/directives.html">custom directives</a></li>
+            <li>Connect to external API's via <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a></li>
+            <li>Store data in a <a href="http://adrianmejia.com/blog/2014/09/28/angularjs-tutorial-for-beginners-with-nodejs-expressjs-and-mongodb/">database</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Angular 2.0</h3>
+          <ul>
+            <li>Sometime in 2016, Angular 2.0 will be released</li>
+            <li>It will be a rewrite largely based on ES6</li>
+            <li>The global <code>$scope</code> object &amp; jqLite will be removed</li>
+            <li>The implementation of directives and controllers will change</li>
+            <li>But don't worry! The fundamentals you've learned in this workshop will live on!</li>
+            <li><a href="https://www.airpair.com/angularjs/posts/preparing-for-the-future-of-angularjs">Preparing for the Future of AngularJS</a></li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h3>Next Steps</h3>
+          <ul>
+            <li>Read Up!
+              <ul>
+                <li><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">Journey Through the JavaScript MVC Jungle</a></li>
+                <li><a href="http://todomvc.com/">todomvc.com</a></li>
+                <li><a href="https://www.ng-book.com/">ng-book: The Complete Book on AngularJS</a></li>
+                <li><a href="http://www.ng-newsletter.com/">ng-newsletter</a></li>
+              </ul>
+            </li>
+            <li>Practice!
+              <ul><li><a href="http://www.codecademy.com/learn/learn-angularjs">Codeacademy AngularJS Course</a></li>
+              <li><a href="http://teamtreehouse.com/library/angularjs">Treehouse AngularJS Course</a></li>
+              <li><a href="https://www.codeschool.com/paths/javascript">Beginner &amp; Intermediate AngularJS Course on CodeSchool</a></li>
+              <li><a href="http://www.cheatography.com/proloser/cheat-sheets/angularjs/">AngularJS Cheatsheet</a></li></ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Next Steps</h3>
+          <ul>
+            <li>Build Something!
+              <ul><li>FAQ list, gallery, quiz, calculator, or whatever else you can cook up!</li></ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+          <div style="font-size:1200%; height:100%; margin-top:30%">?
+            <div class="clear"></div></div>
+        </section>
+
+      </div>
+      <footer>
+        <div class="copyright">
+          HTML/CSS ~ Girl Develop It
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

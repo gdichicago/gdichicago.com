@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="recipeApp">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body>
+
+		<!-- with an individual object -->
+	  <section ng-controller="RecipeController as recipeCtrl">
+	  		<h1>How to make {{recipeCtrl.recipe.name}}:</h1>
+	  		<p>Cook Time: {{recipeCtrl.recipe.cookTime}} minutes</p>
+	  		<p>Prep Time: {{recipeCtrl.recipe.prepTime}} minutes</p>
+	  		<ul>
+	  			<li ng-repeat="ingredient in recipeCtrl.recipe.ingredients">{{ingredient}}</li>
+	  		</ul>
+	  		<p>{{recipeCtrl.recipe.directions}}</p>
+	  		<p ng-if="recipeCtrl.recipe.isVegan">Vegan</p>
+	  		<p ng-if="recipeCtrl.recipe.isGlutenFree">Gluten Free</p>
+	  		<p ng-if="recipeCtrl.recipe.isPaleo">Paleo</p>
+	  </section>
+
+
+	  <!-- with an array of objects -->
+<!-- 	  	  <section ng-controller="RecipeController as recipeCtrl">
+	  	  	<article ng-repeat="recipe in recipeCtrl.recipes">
+		  		<h1>How to make {{recipe.name}}:</h1>
+		  		<p>Cook Time: {{recipe.cookTime}} minutes</p>
+		  		<p>Prep Time: {{recipe.prepTime}} minutes</p>
+		  		<ul>
+		  			<li ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</li>
+		  		</ul>
+		  		<p>{{recipe.directions}}</p>
+		  		<p ng-if="recipe.isVegan">Vegan</p>
+		  		<p ng-if="recipe.isGlutenFree">Gluten Free</p>
+		  		<p ng-if="recipe.isPaleo">Paleo</p>
+		  	</article>
+		  </section> -->
+
+	</body>
+
+</html>

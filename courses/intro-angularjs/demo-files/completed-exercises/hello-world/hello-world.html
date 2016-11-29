@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	</head>
+
+	<body ng-app>
+
+		<!-- will render: I have 3 apples -->
+	    <p>I have {{ 1 + 2 }} apples</p>
+
+
+	    <!-- will render: Our President is Barack Obama -->
+	    <p>My cat's name is {{ "Admiral " + "Snuggles" }}</p>
+
+
+	    <!-- heading text that will render as the value of whatever is entered in input field -->
+	    <label>Name:</label>
+	    <input type="text" ng-model="yourName">
+	    <hr>
+	    <h1>Hello {{yourName}}!</h1>
+
+	    <!-- will render: a list of 4 sentences, each starting with the name of a TV show from the array, followed by the hardcoded text after {{item}} -->
+	    <ul>
+	        <li ng-repeat="item in ['The Wire', 'True Detective', 'Broad City', 'The Fall']">
+	            {{item}} is an excellent TV show.
+	        </li>
+	    </ul>
+
+
+	    <!-- this image will show, since it's true that 'rygo' === 'rygo' -->
+	    <img src="https://s-media-cache-ak0.pinimg.com/236x/b0/76/50/b076508aeb971785d75c1d236bd1149b.jpg" class="image1" ng-show="'rygo' === 'rygo'">
+
+
+	    <!-- this image will not show, since it's false that 'rygo' === 'RYGO' -->
+	    <img src="http://www.hollywoodreporter.com/sites/default/files/imagecache/300_portrait/2015/01/ryan_gosling.jpg" class="image2" ng-show="'rygo' === 'RYGO'">
+
+
+	    <!-- will render a button- clicking it will toggle an image as the value of 'isClicked' changes-->
+	    <section ng-init="isClicked = false">
+	    	<button ng-click="isClicked = !isClicked">Click here!</button>
+	    	<br>
+	    	<img src="http://i.dailymail.co.uk/i/pix/2014/01/31/article-0-1B181EF000000578-786_634x398.jpg" ng-show="isClicked">
+	    </section>
+
+	</body>
+
+</html>
