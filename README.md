@@ -1,23 +1,19 @@
-# The mothership
+# gdichicago.com
+This repository contains the source code for GDI Chicago's personal static website, hosted via Github Pages.
 
-This is a massive mothership respoitory that contains submodules of all the materials to be hosted on gdichicago.com.
+### Adding/Removing Courses
+To add a new course to the "Course Materials" page (all contained in the `courses/` directory), use the Ruby script in [this repo](https://github.com/gdichicago/course-updater). There are further instructions (simple, I promise!) on adding/removing courses and running the script there.
 
-It also contains the static pages for the site.
+Once you're ready with the `course-updater` script, run it in the `courses/` directory in order to add/remove/update all course contents at once.
 
-## How it works
+After you've run the script, all courses contained in its source will be available! Only their contents are fetched (the git guts are removed) in order to avoid dependencies via git submodules. Since each course contains an `index.html` file in its main directory, you can reference the path to its repo directly in `courses/index.html`. (Github Pages is handy like that.)
 
-### Adding new submodules
-
-You want to add all new submodules in the root folder of the repo.
+For example, I added the Intro to Git/Github course to my script, so now I see the directory `courses/git-github/` locally. In `courses/index.html`, I can link to the course slides like so:
 
 ```
-git submodule add https://gitlab.com/gdichicago/pairup.git pairup
+<a href="git-github">Our awesome Intro to Git/Github Course!</a>
 ```
+For more examples, view `courses/index.html`.
 
-This will add the content to the `pair up` folder, which will be accessible at `gdichicago.com/pairup`.
-
-**All submodules must have the content compiled and read for upload.**
-
-### Uploading to AWS
-
-Changes merged into the `stable` branch (including submodules) are automatically deployed.
+### Deploying
+Changes merged into the `gh-pages` branch are automatically deployed via Github Pages.
