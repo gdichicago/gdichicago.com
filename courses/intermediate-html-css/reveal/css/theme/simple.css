@@ -185,3 +185,19 @@ body {
     vertical-align: middle;
 }
 .reveal footer span {color: #f05b62;}
+
+/*I am not a huge fan of forcing importants in code 
+ and I am looking for some suggestions on where/how 
+ to best make adjustments for our slides. - Marvin Cespedes */
+
+ p, li {
+  font-size: 0.85em !important;
+  margin-bottom: 0.75em !important;
+ }
+ li {
+  margin-bottom: 0.35em !important;
+ }
+ .gdi-logo {
+  width: 400px;
+  box-shadow: none !important;
+ }

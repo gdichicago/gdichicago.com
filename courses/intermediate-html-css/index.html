@@ -44,20 +44,18 @@
         <div class="slides">
             <!-- Opening -->
             <section>
-                <img src="images/gdi_logo_badge.png" style="padding: 10px; width:400px;" alt="gdi" />
+                <img class="gdi-logo" src="images/girl-develop-it_circle-logo.svg" alt="Girl Develop It circlar logo" />
                 <h3>Intermediate HTML/CSS &amp; Intro to Responsive Design</h3>
             </section>
             <section>
                 <h2>Welcome!</h2>
                 <h4 class="blue">Wifi Info</h4>
-                <p>
-                    <strong>Network: </strong></p>
-                <p>
-                    <strong>Password: </strong></p>
+                <p><strong>Network: </strong></p>
+                <p><strong>Password: </strong></p>
                 <br/>
                 <h3>Download workshop files</h3>
                 <p>Please download workshop files at:<br />
-                <a href="http://girldevelopit.github.io/gdi-featured-intermediate-html-css/workshop-files.zip">http://girldevelopit.github.io/gdi-featured-intermediate-html-css/workshop-files.zip</a></p>
+                <a href="http://girldevelopit.github.io/gdi-featured-html-css-intermediate/workshop-files.zip">http://girldevelopit.github.io/gdi-featured-html-css-intermediate/workshop-files.zip</a></p>
             </section>
             <section>
                 <h2>Thanks to our host:</h2>
@@ -65,7 +63,7 @@
             <section>
                 <h3>Class notes</h3>
                 <p>All slides are available at:<br />
-                <a href="http://girldevelopit.github.io/gdi-featured-intermediate-html-css/">http://girldevelopit.github.io/gdi-featured-intermediate-html-css/</a></p>
+                <a href="http://girldevelopit.github.io/gdi-featured-html-css-intermediate/">http://girldevelopit.github.io/gdi-featured-html-css-intermediate/</a></p>
             </section>
             <!-- Welcome-->
             <section class="hide-pdf">
@@ -92,7 +90,7 @@
                 <ul>
                     <li>Tell us who you are.</li>
                     <li>What do you hope to get out of this class?</li>
-                    <li>Unlimited amount of money - where would you travel to?</li>
+                    <li>Unlimited amount of money - where would you travel/move to?</li>
             </section>
             <section>
                 <h2>What we'll be covering in this class</h2>
@@ -108,7 +106,7 @@
             </section>
             <section>
                 <h3>Workshop files</h3>
-                <p>Last reminder to download the files for today's class! </p>
+                <p>Last reminder to <a href="http://girldevelopit.github.io/gdi-featured-html-css-intermediate/">download the files</a> for today's class! </p>
                 <ul>
                     <li>We have provided a folder that contains sample images for you to use today. We encourage you to be creative so don't feel like you're restricted to these images</li>
                     <li>We've also included a blank index.html file for you to work from, as well as the final site for you to use as a reference if you get stuck.</li>
@@ -147,7 +145,7 @@
             <section>
                 <h3>Standard Practices</h3>
                 <ul>
-                    <li class="fragment">Reset CSS files</li>
+                    <li class="fragment">Reset (or Normalize) CSS files</li>
                     <li class="fragment">Standard widths and sizes</li>
                     <li class="fragment">Containers for layout</li>
                 </ul>
@@ -170,20 +168,26 @@
                 <div>
                     Most elements:
                     <pre><code class = "html">
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-</code></pre>
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+                    </code></pre>
                 </div>
                 <div>
                     Lists:
                     <pre><code class = "html">
-  list-style: none;
-</code></pre>
+list-style: none;
+                    </code></pre>
                 </div>
+            </section>
+            <section>
+                <h3>Normalize CSS</h3>
+                <p>Similar to Reset, Normalize will keep standard margins, padding, lists, etc. to conform to a uniformed layout.</p>
+                <p>Different browsers display these things differently. A Normalize gets rid of these inconsistencies by ensuring all base styles match one another between all modern browsers.</p>
+                <p>For simplicities sake, we will ONLY use a CSS reset in this class but know there are two methodologies you will likely encounter in the real world (either Normalize or Reset)</p> 
             </section>
             <section>
                 <h3>Reset CSS</h3>
@@ -225,13 +229,13 @@
                 <h3>Containers</h3>
                 <p>Wrappers are a good way to center content if the screen width is wider than your content.</p>
                 <pre><code class = "html">
-  .container {
-      width: 100%; /* take up full viewport width */
-      max-width: 1400px; /* if viewport is larger than 1440px, 
-                            don't let it take up 100% */
-      margin: 0 auto; /* center content in the viewport */
-  }
-</code></pre>
+.container {
+  width: 100%; /* take up full viewport width */
+  max-width: 1400px; /* if viewport is larger than 1440px, 
+                        don't let it take up 100% */
+  margin: 0 auto; /* center content in the viewport */
+}
+                </code></pre>
                 <ul>
                     <li>1. The container will take up 100% of the screen if the width of the viewport is less than 1440px.</li>
                     <li>2. If the viewport is wider than 1440px, it will reach it's max width, and become centered in the viewport.</li>
@@ -248,7 +252,7 @@
                     <ul class>
                         <li>HTML5</li>
                         <li>CSS3</li>
-                        <li>JavaScript</li>
+                        <li>JavaScript (ECMAScript 2016)</li>
                     </ul>
             </section>
 
@@ -295,27 +299,31 @@
                 <p>Percentage of HTML5 Elements supported:</p>
                 <ul>
                     <li class="chrome">
-                        <strong>Chrome 43:</strong>
-                        <span class="green">95% supported</span>
-                    </li>
-                    <li class="opera">
-                        <strong>Opera 29:</strong>
-                        <span class="blue">94% supported</span>
+                        <strong>Chrome 52:</strong>
+                        <span class="green">91% supported</span>
                     </li>
                     <li class="firefox">
-                        <strong>Firefox 38:</strong>
+                        <strong>Firefox 50:</strong>
                         <span class="blue">84% supported</span>
                     </li>
                     <li class="webkit">
-                        <strong>Safari 8:</strong>
-                        <span class="blue">71% supported</span>
+                        <strong>Safari 10:</strong>
+                        <span class="blue">69% supported</span>
+                    </li>
+                    <li class="opera">
+                        <strong>Opera 42:</strong>
+                        <span class="blue">90% supported</span>
+                    </li>
+                    <li class="ie">
+                        <strong>Edge 14:</strong>
+                        <span class="blue">82% supported</span>
                     </li>
                     <li class="ie">
                         <strong>Internet Explorer 11:</strong>
-                        <span class="blue">60% supported</span>
+                        <span class="blue">56% supported</span>
                     </li>
-
                 </ul>
+                <p><em>Information compiled by <a href="https://html5test.com/">HTML5 Test</a></em></p>
             </section>
             <section>
                 <h3>So what's so cool about it?</h3>
@@ -725,7 +733,7 @@ nav ul {
                 </section>
                 <section>
                     <h3>Vendor Prefixes</h3>
-                    <p>HTML5 and CSS3 are still new!</p>
+                    <p>HTML5 and CSS3 are still (sort of) new!</p>
                     <p>This is great, but it means that not all browsers treat new CSS3 properties the same</p>
                 </section>
                 <section>
@@ -738,30 +746,32 @@ nav ul {
                     <p>Each browser has their own:</p>
                     <ul>
                         <li>
-                            <span class="green">Chrome:</span>-webkit-</li>
+                            <span class="green">Chrome (though not as much anymore), Safari,  and newer versions of Opera:</span>-webkit-</li>
                         <li>
                             <span class="green">Firefox:</span>-moz-</li>
                         <li>
-                            <span class="green">Safari:</span>-webkit-</li>
+                            <span class="green">Opera (old versions):</span>-o-</li>
                         <li>
-                            <span class="green">Opera:</span>-o-</li>
+                            <span class="green">Internet Explorer (Non-Edge):</span>-ms-</li>
                     </ul>
                 </section>
                 <section>
                     <h3>Using Prefixes</h3>
-                    <pre><code class="css">#hero img {
+                    <pre><code class="css">
+#hero img {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-}</code></pre>
+}
+                    </code></pre>
                     <p>Order matters! The non-prefixed version should always go last.</p>
                 </section>
                 <section>
                     <h3>NOTE:</h3>
-                    <p>While you should always use the vendor prefixes when writing code, today we're just going to use the non-prefixed property.</p>
-                    <p>This is to save time during the code exercises</p>
+                    <p>You should ONLY use the vendor prefixes when you need them. <a href="http://shouldiprefix.com/" target="_blank">Should I Prefix</a> is a third party site that showcases properties that likely still require prefixes. The properties we will use in this class DO NOT require vendor prefixes.</p>
+                    <p><strong>NOTE:</strong> Even this site has some level of innacuracies as browsers continue to update. Use this site as a basic guide, but know that nothing beats actual browser testing.</p>
                 </section>
             <section data-background="#f05b62">
                 <h1 style="color: #fafafa;">Back to our Hero!</h1>
@@ -771,7 +781,8 @@ nav ul {
                 <p>Notice how the image is too large for the section? Let's fix that with a new property called
                     <code>background-size</code>
                 </p>
-                <pre><code class="css">#hero {
+                <pre><code class="css">
+#hero {
     background: url(../images/zebra.jpg) no-repeat top left;
     color: #fafafa;
     text-align: center;
@@ -779,7 +790,7 @@ nav ul {
     padding: 25px 0;
     background-size: cover;
 }
-</code></pre>
+                </code></pre>
                 <p>
                     <code>cover</code> scales the image to the largest size such that both its width and its height can fit inside the content area.</p>
             </section>
@@ -799,8 +810,9 @@ nav ul {
             </section>
             <section>
                 <h3>Why 3 columns?</h3>
-                <p>Because 2 columns is so 2013</p>
+                <p>Because it's fun to challenge you.</p>
                 <p>Or, because it's a comfortable width for readability. And because 3 is a pleasing design construct.</p>
+                <p>Today, many designs fluctuate between single column, to three columns and try to be mindful of widths for devices and readability. The beauty of development and design is that it's always learning and evolving with time.</p>
             </section>
             <section>
                 <h3>3 Column: HTML</h3>
@@ -888,7 +900,7 @@ nav ul {
                 </section>
                 <section>
                     <h2>How to use SVG today</h2>
-                    <p>Use Adobe Illustrator, or other vector program, to create a high quality image.</p>
+                    <p>Use Adobe Illustrator, Sketch, Inkscape, SVG-Edit, Method Draw, Mondrian, or other vector program, to create a high quality image.</p>
                     <p>Save it as a .svg file.</p>
                     <p>Save a high res .png image as a fallback.</p>
                 </section>
@@ -915,7 +927,12 @@ nav ul {
                     <h2>Browser Support</h2>
                     <p>Our favorite topic - Internet Explorer</p>
                     <img src="images/svg-support.png" alt="SVG support" />
-                    <p>Chris Coyer has written an <a href="http://css-tricks.com/using-svg/" target="_blank">amazing article</a> with tons of work arounds for our BFF IE8.</p>
+                    <p>Chris Coyer has written an <a href="http://css-tricks.com/using-svg/" target="_blank">amazing article</a> with tons of work arounds for our BFF IE8. But, I have good news...</p>
+                </section>
+                <section>
+                    <h2>Browser Support 2</h2>
+                    <img src="images/gdi-html-intermediate-svg-support-2017.png" alt="SVG support" />
+                    <p>Only IE11 is supported by Microsoft, and as such we can at least say that SVG will work on all current browsers (this is also true for a number of HTML5 and CSS3 elements/properties).</p>
                 </section>
             <section>
                 <h3>SVG Social Icons</h3>
@@ -1688,14 +1705,14 @@ user-scalable=true;"></code></pre>
             <section>
               <h2>Bootstrap</h2>
               <p>By far the most popular front-end framework out there.</p>
-              <img src="images/bootstrap.png" style="height:400px"/>
+              <img src="images/bootstrap.jpg" style="height:400px"/>
               <p><a href="http://getbootstrap.com/" target="_blank">Download</a></p>
             </section>
             
             <section>
               <h2>Foundation</h2>
               <p>Another very popular framework that is just as robust at bootstrap - but in a different way.</p>
-              <img src="images/foundation.png" style="height:400px"/>
+              <img src="images/foundation.jpg" style="height:400px"/>
               <p><a href="http://foundation.zurb.com/" target="_blank">Download</a></p>
             </section>
             <section>
@@ -1821,7 +1838,31 @@ p {
 p {
   color: #199FD9;
 }</code></pre>
-</section>
+            </section>
+            <section>
+                <h2>This is a lot of stuff, no?</h2>
+                <p>Yes, yes it is.</p>
+            </section>
+            <section>
+                <p>Remember that you are not alone and there are so so many guides, resources, and classes that have never existed before.</p>
+                <p>If you try to learn everything, you will learn nothing.</p>
+                <p>Being a developer is about progressively learning, and knowing what you need to know when you NEED to know it.</p>
+            </section>
+            <section>
+                <p>That being said there are is an endless sea of resources for design development and you need to take the time to slowly learn and advance with time.</p>
+                <ul>
+                    <li><a href="https://enboard.co/frontend/">Front-end Resources</a></li>
+                    <li><a href="https://github.com/gztchan/awesome-design" target="_blank">Design Resources</a></li>
+                    <li><a href="https://github.com/neutraltone/awesome-stock-resources" target="_blank">Stock Resources</a></li>
+                    <li>and of course <a href="https://www.girldevelopit.com/chapters/chicago" target="_blank">Girl Develop It Chicago</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Thank you!</h2>
+                <p>A huge thank you to our TA's, the Girl Develop It Chicago leaders, our sponsor and space for today</p>
+                <p>...and most importantly, you!</p>
+                <p>On to the next class!!!</p>
+            </section>
         </div>
         <footer>
             <div class="copyright">
