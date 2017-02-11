@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Intro to Rails</title>
+
+    <meta name="description" content="This is an Intro to Rails course, intended for eventual inclusion in the Girl Develop It Core Curriculum. All material by Cheri Allen, inspired by Railsbridge.
+
+    The course is meant to be taught in four two-hour workshops. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+     <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/gdilight.css" id="theme">
+    <link rel="stylesheet" href="overwrite.css">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+    <!-- dark editor--><link rel="stylesheet" href="reveal.js/lib/css/dark.css">
+
+    <!-- If use the PDF print sheet so students can print slides-->
+    
+    <link rel="stylesheet" href="reveal.js/css/print/pdf.css" type="text/css" media="print">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src = "images/gdi_logo_badge.png">
+          <h3>Intro to Rails</h3>
+          <p>slides: http://cherimarie.github.io/gdi-rails</p>
+        </section>
+        
+        <!-- Welcome-->
+        <section>
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+        
+        <section>
+          <h3>What we will cover today</h3>
+          <ul>
+            <li>Homework review</li>
+            <li>Write user stories for new app</li>
+            <li>Plan app architecture</li>
+            <li>Build models</li>
+            <li>Build data associations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Homework Discussion</h3>
+          <p>Questions?</p>
+        </section>
+
+        <section>
+          <h3>Best Song App</h3>
+          <h5>Description</h5>
+          <p>An application that lists artists and allows users to vote for their favorite songs by artist, and suggest new songs to vote on.</p>
+        </section>
+
+        <section>
+          <h3>User Stories</h3>
+          <ul>
+            <li>Stories guide development- how will your product be used?</li>
+            <li>Should be for small, testable features</li>
+            <li>Written with input from the stakeholders</li>
+            <li>Formal format is: As a (role) I want (goal) so that (reason).</li>
+            <li>Give them a priority ("required", "nice to have", "v2")</li>
+            <li>Give them an estimated time/size (how hard will this be to do?)</li>
+            <li>During the project, stories may change, be broken into smaller pieces, be re-prioritized or re-estimated</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>User Story Examples</h3>
+          <ul>
+            <li>As a user, I can backup my entire hard drive.</li>
+            <li>As a user, I can indicate folders not to backup so that my backup drive isn't filled up with things I don't need saved.</li>
+            <li>Parking passes can be paid via credit cards.</li>
+            <li>Students can only enroll in seminars for which they have prerequisites.</li>
+          </ul>
+          <a href="http://www.allaboutagile.com/writing-good-user-stories/" alt="User stories reading">More info on writing good user stories...</a>
+        </section>
+
+        <section>
+          <h3>Best Song App User Stories</h3>
+          <p>????</p>
+          <!-- 10 minute discussion, list student suggestions on whiteboard if possible -->
+        </section>
+
+        <section>
+          <h3>App Architecture</h3>
+          <ul>
+            <li>Models</li>
+            <li>Data Associations</li>
+            <li>Controllers</li>
+            <li>Views</li>
+          </ul>
+          <br><br>
+          <p>What do we need?</p>
+          <!-- 10 minute discussion, write out requirements on a whiteboard if possible -->
+        </section>
+
+        <section>
+          <h3>Let's Build an App!</h3>
+          <!-- Change these models, etc. to reflect your class' requirements-->
+          <h4>Generating Models</h4>
+          <pre><code class="command-line">
+$ rails generate model Artist full_name:string 
+$ rails generate model Song title:string artist:belongs_to
+$ rails generate model Vote song:belongs_to            
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Migrations</h3>
+          <p>Generating models also generated database migrations for us. Let's check them out and make sure they list the attributes we want.</p>
+        </section>
+
+        <section>
+          <h3>Migrations</h3>
+          <p>Let's add 'current hairstyle' attribute to Artist table!</p>
+          <p>Since the migration hasn't been run yet, we can just edit it to add the new column.</p>
+          <pre><code class="ruby">
+def change
+  create_table :artists do |t|
+    t.string :name
+    t.string :current_hairstyle
+    t.timestamps
+  end
+end
+          </code></pre>
+          <p>Ok, now that it looks good, run the migrations.</p>
+          <pre><code class="command-line">
+$ rake db:migrate
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Migrations</h3>
+          <ul>
+            <li>Migrations describe changes that will be made to the database. </li>
+            <li>They use a Ruby DSL so you don't have to write SQL.</li>
+            <li>Each migration modifies the database's schema, which you can see in your db/schema.rb file.</li>
+          </ul>
+          <a href="http://guides.rubyonrails.org/migrations.html" alt="Rails guide to migrations">Migrations in more detail...</a>
+        </section>
+
+        <section>
+          <h3>Migrations</h3>
+          <p>It would be pretty cool if songs has an attribute called 'optimal volume'. Let's create a migration to add that to the table. Run this in the terminal:</p>
+          <pre><code class="command-line">
+$ rails generate migration AddOptimalVolumetoSongs
+          </code></pre>
+          <p>And this will be the migration file it generates, with your additions:</p>
+          <pre><code class="ruby">
+class AddOptimalVolumetoSongs &lt; ActiveRecord::Migration
+  def change
+    add_column :songs, :optimal_volume, :string
+  end
+end
+          </code></pre>
+          <p>Sweet. Now run the migration ('rake db:migrate') so the schema is up to date.</p>
+        </section>
+
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p>Generate a migration to add a column called 'hometown' with a type of 'string' to the Artists table.</p>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <p>The second part of building data associations is in the models.</p>
+          <pre><code class="ruby">
+class Artist &lt; ActiveRecord::Base
+  has_many :songs 
+end
+
+class Song &lt; ActiveRecord::Base
+  belongs_to :artist
+  has_many :votes 
+end
+
+class Vote &lt; ActiveRecord::Base
+  belongs_to :song
+end            
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <p>Rails supports six types of associations: </p>
+          <ul>
+            <li>belongs_to</li>
+            <li>has_one</li>
+            <li>has_many</li>
+            <li>has_many :through</li>
+            <li>has_one :through</li>
+            <li>has_and_belongs_to_many</li>
+          </ul>
+          <p>Note: the last two are not used very often.</p>
+          <a href="http://guides.rubyonrails.org/association_basics.html" alt="rails guides association basics">Associations in more detail...</a>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <h4>belongs_to</h4>
+          <p>This sets up either a one-to-one or one-to-many model with another mdoel.</p>
+          <li>If order <strong>belongs to</strong> customer, each order can be assigned to exactly <strong>one</strong> customer.</li>
+          <li>In the order table, there will be an entry for 'customer_id: integer'.</li>
+          <li>The order model will say 'belongs_to :customer'. Note that 'customer' is singular!</li>
+          <li>The customer model will need to either 'have one' or 'have many' orders.</li>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <h4>has_one</h4>
+          <p>This sets up a one-to-one connection with a another model.</p>
+          <li>If supplier <strong>has one</strong> account, each supplier can have exactly <strong>one</strong> associated account.</li>
+          <li>In the supplier table, there will not be a reference to accounts.</li>
+          <li>The supplier model will say 'has_one :account'. Note that 'account' is singular!</li>
+          <li>The account model will need to 'belong to' supplier.</li>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <h4>has_many</h4>
+          <p>This sets up a one-to-many connection with another model.</p>
+          <li>If customer <strong>has many</strong> orders, each customer may be associated with zero or more orders.</li>
+          <li>In the customer table, there will not be a reference to orders.</li>
+          <li>The customer model will say 'has_many :orders'. Note that 'orders' is plural!</li>
+          <li>Orders will need to 'belong to' customer.</li>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <h4>has_many :through</h4>
+          <p>This sets up a many-to-many connection to another model, through a third model.</p>
+          <li>A patient can have many physicians <strong>through</strong> an appointment and a physician can have many patients <strong>through</strong> an appointment.</li>
+          <li>In the appointments table, there will be an entry for both physician_id and patient_id.</li>
+          <li>The appointment model will say 'belongs_to :physician, belongs_to :patient', and the patient model will say 'has_many :appointments, has_many :physicians, through: :appointments'.</li>
+        </section>
+
+        <section>
+          <h3>Data Associations</h3>
+          <h4>Index?</h4>
+          <p>A database index is a data structure that improves the speed of data retrieval at the cost of more storage space. An index is a copy of the selected columns, which can be searched very efficiently.</p>
+        </section>
+
+        <section>
+          <h3>Summary</h3>
+          <p>Today, we planned out our application by writing user stories and discussing the architecture. Then, we generated the models that we'll be using, and hooked up the associations properly.</p>
+        </section>
+
+        <section>
+          <h3>Questions?</h3>
+        </section>
+
+        <section>
+          <h3>Homework</h3>
+          <ul>
+          <li>Do the first three levels of <a href="http://railsforzombies.org/levels/1" alt="rails for zombies tutorial">Rails for Zombies</a></li>
+          <li>Spend some time in the Rails Console with your Best Song App, creating, destroying, and updating database records.</li>
+          </ul>
+        </section>
+
+
+
+       
+      </div>
+      <footer>
+        <div class="copyright">
+          Intro to Rails
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+    </div>
+
+
+   
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+  </body>
+</html>

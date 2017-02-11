@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Class 2 (Sass, Girl Develop It)</title>
+
+    <meta name="description" content="This is the official Girl Develop It Intro to Sass course. Materials by Catherine Farman.
+
+    The course is meant to be taught in 2 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="reveal.js/favicon.ico">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="assets/reveal/theme/gdilight.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="assets/reveal/light.css">
+
+    <!-- If use the PDF print sheet so students can print slides-->
+    <link rel="stylesheet" href="reveal.js/css/print/pdf.css" type="text/css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src = "images/gdi_logo_badge.png" class="badge">
+          <h3>Intro to Sass</h3>
+          <h4>Class 2</h4>
+        </section>
+
+        <!-- Opening slide -->
+        <section>
+          <h3>Download Class 2 Files:</h3>
+          <p class="blue" style="font-size: 3em; text-decoration: underline;">cfarm.co/sass2</p>
+        </section>
+
+        <!-- Review/Exercise 1 -->
+        <section>
+          <h3>Review: Mixins</h3>
+          <div class = "left-align">
+          <p class = "blue">If you haven't already, create these mixins in _utilities:</p>
+          <ul>
+            <li>dropshadow/text-shadow style</li>
+            <li>clearfix</li>
+            <li>gradient</li>
+          </ul>
+          <pre><code class ="php">@mixin example($optionalArgument) {
+  property: value;
+  property: $optionalArgument;
+}
+p {
+  @include example($optionalArgument);
+}
+</code></pre>
+          </div>
+        </section>
+
+        <!-- Advanced mixins: Multiple arguments -->
+        <section>
+          <h3>Multiple Arguments</h3>
+          <div class="left-align">
+            Mixins can take multiple arguments, as we saw with the gradient mixin:
+            <pre><code contenteditable class="sass css">@mixin gradient($color1, $color2) {
+  background-image: -webkit-linear-gradient($color1, $color2, $color1);
+  background-image: -moz-linear-gradient($color1, $color2, $color1);
+  background-image: linear-gradient($color1, $color2, $color1);
+}</code></pre>
+</div>
+        </section>
+
+        <!-- Advanced mixins: Default values -->
+        <section>
+          <h3>Default Arguments</h3>
+          <div class="left-align">
+            You can also specify *default* values for arguments, for next-level laziness (a good thing):
+            <pre><code contenteditable class="sass css">@mixin gradient($color1: #fff, $color2: #666) {
+  background-image: -webkit-linear-gradient($color1, $color2, $color1);
+  background-image: -moz-linear-gradient($color1, $color2, $color1);
+  background-image: linear-gradient($color1, $color2, $color1);
+}</code></pre>
+</div>
+        </section>
+
+        <!-- Advanced mixins -->
+        <section>
+          <h3>Interpolation</h3>
+          <div class="left-align">
+            With some styles, we may want to use variables right next to text, like with our image rotate style - try it in _utilities:
+            <pre><code contenteditable class="sass css">@mixin rotate($degree, $position) {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  -webkit-transform-origin: $position;
+  -moz-transform-origin: $position;
+  transform-origin: $position;
+}</code></pre>
+</div>
+        </section>
+
+        <!-- Advanced mixins: Interpolation -->
+        <section>
+          <h3>Interpolation</h3>
+          <div class="left-align">
+            We do this by using <a target="_blank" href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#interpolation_">interpolations</a>, which is a special syntax for variables that appear inside regular CSS text:
+            <pre><code contenteditable class="sass css">@mixin rotate($degree, $position) {
+  -webkit-transform: rotate(#{$degree}deg);
+  -moz-transform: rotate(#{$degree}deg);
+  transform: rotate(#{$degree}deg);
+  -webkit-transform-origin: $position;
+  -moz-transform-origin: $position;
+  transform-origin: $position;
+}</code></pre>
+</div>
+        </section>
+
+
+        <!-- @extend -->
+        <section>
+          <h3>@extend</h3>
+          <div class="left-align">
+            Sometimes we have styles that duplicate another class, then add to it. We can use a mixin for these, OR we can use @extend:
+            <pre><code contenteditable class="sass css">.headline {
+  font-size: 2em;
+  font-weight: bold;
+}
+.lead-story-headline {
+  @extend .headline;
+  text-decoration: underline;
+  text-transform: uppercase;
+}</code></pre>
+</div>
+        </section>
+
+        <!-- Exercise 2: Advanced Mixins -->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+          <li>Create new mixins using the following:
+            <ul>
+              <li>Multiple arguments</li>
+              <li>Default arguments</li>
+              <li>Interpolation</li>
+              <li>@extend to include common styles</li>
+            </ul>
+          </li>
+          <li>Use these mix-ins in your styles.scss file</li>
+          <li>Compile to CSS and refresh your index page to see your changes</li>
+        </ul>
+        </section>
+
+        <!-- Advanced mixins: CSS3 and UI mixins -->
+        <section>
+          <h3>CSS3: Browser Prefixes</h3>
+          <div class="left-align">
+            Lots of CSS3 features require browser prefixes or have complex syntaxes. These are perfectly suited to mixins, so we can include them in our styles without having to copy and paste from sites like <a target="_blank" href="http://css3please.com/">CSS3 Please</a>.
+            <pre><code contenteditable class="sass css">@mixin rotate($degree</span>, $position) {
+  -webkit-transform: rotate(#{$degree}</span>deg);
+  -moz-transform: rotate(#{$degree}</span>deg);
+  transform: rotate(#{$degree}</span>deg);
+  -webkit-transform-origin: $position;
+  -moz-transform-origin: $position;
+  transform-origin: $position;
+}</code></pre>
+</div>
+        </section>
+
+        <!-- Advanced mixins: CSS3 and UI mixins -->
+        <section>
+          <h3>CSS3: Browser Prefixes</h3>
+          <div class="left-align">
+            Gradients are CSS3 and require browser prefixes to work in Firefox, Chrome, Safari, &amp; Internet Explorer.
+            <pre><code contenteditable class="sass css">@mixin gradient($color1: $bodyBackground, $color2: $accentBackground) {
+  background-image: -webkit-linear-gradient($color1, $color2, $color1);
+  background-image: -moz-linear-gradient($color1, $color2, $color1);
+  background-image: linear-gradient($color1, $color2, $color1);
+}
+@include gradient(#fff, #000);</code></pre>
+</div>
+        </section>
+
+        <!-- Advanced mixins: CSS3 and UI mixins -->
+        <section>
+          <h3>CSS3 Mixins</h3>
+          <div class="left-align">
+            <p>Other CSS3 features that require browser prefixes to work in most popular browsers include:</p>
+            <ul>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/arBLb">@font-face</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/BrckG"> transitions</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/rkEIo">box-shadow</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/kcfwH">opacity</a></li>
+            </ul>
+        </div>
+        </section>
+
+        <!-- Advanced mixins: UI development mixins -->
+        <section>
+          <h3>Mixins for UI Elements</h3>
+          <div class="left-align">
+            <p>Mixins are very useful for common design patterns. A great example is the <a target="_blank" href="http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/">CSS sprite</a> design pattern.</p>
+            <p>Here's YouTube's icon sprite:</p>
+
+           <table class="code-compare">
+            <tr><td>
+            <p>Sprite image:</p>
+            <a target="_blank" href="images/youtube_sprite.png"><img src="images/youtube_sprite.png"></a>
+</td>
+<td>
+            <p>CSS for icon:</p>
+            <pre style="width: 650px"><code contenteditable class ="sass css">.icon {
+display: block;
+background: no-repeat url(images/youtube_sprite.png) -395px -114px;
+background-size: auto;
+width: 18px;
+height: 18px; }</code></pre>
+
+          </tr></td></table>
+        </div>
+        </section>
+
+        <!-- Advanced mixins: UI development mixins -->
+        <section>
+          <h3>Sprite Mixins</h3>
+          <div class="left-align">
+            <p>If you <a target="_blank" href="http://coding.smashingmagazine.com/2012/04/11/css-sprites-revisited/">set up your Photoshop sprite to use grid lines</a>, you can use Sass to easily position your <a target="_blank" href="images/sprite.png">sprite image</a> without lots of trial and error.</p>
+            <pre style="width: 850px"><code contenteditable class ="sass css">@mixin sprite-position($x:0, $y:0) {
+  $gridSize:  -32px;
+  $offsetX:   $x * $gridSize;
+  $offsetY:   $y * $gridSize;
+  background-position: $offsetX $offsetY;
+}
+@mixin sprite-image($file, $x:0, $y:0) {
+  background-image: url("../../images/icons/#{$file}");
+  @include sprite-position($x, $y);
+}</code></pre>
+
+        </div>
+        </section>
+
+       <!-- Advanced mixins: CSS3 and UI mixins -->
+        <section>
+          <h3>CSS3 Mixins</h3>
+          <div class="left-align">
+            <p>Other common UI elements that Sass mixins make easy:</p>
+            <ul>
+              <li><a target="_blank" href="http://codepen.io/seansean11/pen/CKIyf">buttons</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/FAgsp">image replacement</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/opCjq">error messages</a></li>
+              <li><a target="_blank" href="http://codepen.io/cfarm/pen/qkDAe">CSS shapes (triangles, arrows)</a></li>
+            </ul>
+        </div>
+        </section>
+
+
+        <!-- Exercise 3: CSS3 and UI mixins -->
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+          <li>Create new mixins for the following use cases, combining as many as possible:
+            <ul>
+              <li>Sprite images</li>
+              <li>Opacity for all browsers, including IE</li>
+              <li>CSS3 box-shadow</li>
+              <li>@font-face</li>
+              <li>transitions</li>
+              <li>CSS shapes</li>
+            </ul>
+          </li>
+          <li>Use these mix-ins in your styles.scss file</li>
+          <li>Compile to CSS and refresh your index page to see your changes</li>
+        </ul>
+        </section>
+
+        <!-- BREAK before Part 2 -->
+        <section>
+          <h3>Break Time!</h3>
+          <div>
+            <p>Stand up and stretch - we'll resume in 5 minutes</p>
+            <img src="images/stretchbreak.jpg">
+          </div>
+        </section>
+
+        <!-- Exercise 4: Grid layout -->
+        <!---<section>
+          <h3>Let's Develop It</h3>
+          <ul>
+          <li>Create mixins for your page layout:
+            <ul>
+              <li>Make grid mixins that take numbers as arguments: width, padding, margins, etc</li>
+              <li>Remember the box model!</li>
+              <li>Try using <a target="_blank" href="http://css-tricks.com/box-sizing/">CSS3 box-sizing</a> to change the box model - include it as another mixin</li>
+              <li><a target="_blank" href="http://www.slideshare.net/stevehickeydsgn/forget-frameworks-create-your-own-flexible-grid-system">More info on making a grid system</a></li>
+            </ul>
+          </li>
+          <li>Use these mix-ins in your styles.scss file</li>
+          <li>Compile to CSS and refresh your index page to see your changes</li>
+          <li><span class="blue">Bonus:</span>Write a mixin for responsive styles to be used in the media queries in styles.scss</li>
+        </ul>
+        </section>--->
+
+
+        <!-- Advanced mixins: If/Else logic -->
+        <section>
+          <h3>Sprite Mixins</h3>
+          <div class="left-align">
+            <p>Sass has logic statements that you can use to create conditionals. They are <span class="blue">@if</span>, <span class="blue">@else if</span>, and <span class="blue">@else</span></p>
+            <pre style="width: 850px"><code contenteditable class ="sass css">@mixin opacity($value: 0.5) {
+  @if $value == transparent {
+    opacity: 0;
+  } @else if $value == opaque {
+    opacity: 1;
+  } @else {
+    opacity: $value;
+  }
+}
+@include opacity(transparent);
+</code></pre>
+
+        </div>
+        </section>
+
+        <!-- Exercise 4: Logic -->
+        <section>
+          <h3>If/Else If</h3>
+          <div class = "left-align">
+          <p>Rewrite your existing mixins to use if/else if statements, so that they output different CSS depending on different arguments.</p>
+          <pre><code class ="php">@mixin arrow($direction: right) {
+  @if $direction == right {
+    //right arrow styles
+  }
+  @else if $direction == left {
+    // left arrow styles
+  }
+}
+</code></pre>
+          </div>
+        </section>
+
+        <!-- Exercise 5: Loops -->
+        <section>
+          <h3>For Loops</h3>
+          <div class = "left-align">
+            <p>With @for loops, you can make Sass write your classes and styles for you.</p>
+ <table class="code-compare">
+            <tr><td>
+            <p>Sass code:</p>
+            <pre><code class ="php">@for $i from 1 through 3 {
+  .column-#{$i} { width: 2em * $i; }
+}
+</code></pre>
+</td>
+<td>
+            <p>CSS output:</p>
+            <pre style="width: 400px"><code contenteditable class ="sass css">.column-1 {
+  width: 2em;
+}
+.column-2 {
+  width: 4em;
+}
+.column-3 {
+  width: 6em;
+}</code></pre>
+
+          </tr></td></table>
+
+          </div>
+        </section>
+
+        <!-- Exercise 6: Loops -->
+        <section>
+          <h3>For Loops</h3>
+          <div class = "left-align">
+          <ul>
+            <li>Use loops to write classes and styles for you! Use them to make columns that fit within in our layout, and add links to our footer nav in these columns.</li>
+            <li>Experiment with math in your loop's styles - change the width, padding, even font-size</li>
+          </ul>
+          <pre><code class ="php">@for $i from 1 through 3 {
+  .column-#{$i} { width: 2em * $i; }
+}
+</code></pre>
+          </div>
+        </section>
+
+        <!-- Looping with @Each -->
+        <section>
+          <h3>@each</h3>
+          <div class = "left-align">
+            <p>With @each, you can loop through a list of item and create styles for each item in the list.</p>
+            <p>Sass code:</p>
+            <pre style="width: 610px"><code class ="php">@each $icon in youtube, twitter, facebook {
+  .icon-$icon {
+    background-image: url('#{$icon}.png');
+  }
+}
+</code></pre>
+            <p>CSS output:</p>
+            <pre style="width: 560px"><code contenteditable class ="sass css">.icon-youtube {
+  background: url('youtube.png');
+}
+.icon-twitter {
+  background: url('twitter.png');
+}
+.icon-facebook {
+  background: url('facebook.png');
+}</code></pre>
+
+
+          </div>
+        </section>
+
+
+        <!-- Exercise 7: Loops -->
+        <section>
+          <h3>@each</h3>
+          <div class = "left-align">
+          <ul>
+            <li>Create background image styles for each Famous Woman article</li>
+            <li>Try SubtlePatterns.com for images to use</li>
+            <li>Write these background styles with @each and a list</li>
+            <li>Bonus: style your social media icons using @each and @if logic</li>
+          </ul>
+          <pre style="width: 1100px; position: relative; left: -100px;"><code class ="php">@each $woman in ada, grace, frances, barbara, anita, maria {
+  .#{$woman}-bg {
+    background-image: url('images/#{$woman}.png');
+  }
+}</code></pre>
+          </div>
+        </section>
+
+       <!-- Extend SASS -->
+        <section>
+          <h3>Extend Sass</h3>
+          <div class = "left-align">
+            <p>The following tools can help you write Sass even faster:</p>
+          <ul>
+            <li><a target="_blank" href="http://incident57.com/codekit/">CodeKit</a>: Compile Sass &amp; more without command line</li>
+            <li><a target="_blank" href="http://www.mobify.com/dev/sass-sleuth-debugging-sass-in-webkit-browsers/">Sass Sleuth</a>: See Sass line numbers in your browser</li>
+            <li><a target="_blank" href="http://livereload.com/">Live Reload</a>: Compile Sass without refreshing your browser</li>
+            <li><a target="_blank" href="http://compass-style.org">Compass</a></li>
+          </ul>
+          </div>
+        </section>
+
+       <!-- More to Explore -->
+        <section>
+          <h3>More to Explore</h3>
+          <div class = "left-align">
+          <ul>
+            <li><a target="_blank" href="http://haml.info/">Haml</a>: like Sass for HTML</li>
+            <li><a target="_blank" href="http://guides.railsgirls.com/">Rails</a>: Rails is a software development framework written in Ruby. Sass &amp; Haml are used in Rails apps. Try the Rails Girls tutorials to build your own app!</li>
+            <li><a target="_blank" href="http://lesscss.org/">LESS</a>: a CSS preprocessor like Sass with different syntax</li>
+          </ul>
+          </div>
+        </section>
+
+        <!-- -->
+        <section>
+          <h2>Questions?</h2>
+        </section>
+      </div>
+    </div>
+
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Intro to Rails</title>
+
+    <meta name="description" content="This is an Intro to Rails course, intended for eventual inclusion in the Girl Develop It Core Curriculum. All material by Cheri Allen, inspired by Railsbridge.
+
+    The course is meant to be taught in four two-hour workshops. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/gdilight.css" id="theme">
+    <link rel="stylesheet" href="overwrite.css">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+    <!-- dark editor--><link rel="stylesheet" href="reveal.js/lib/css/dark.css">
+
+    <!-- If use the PDF print sheet so students can print slides-->
+    
+    <link rel="stylesheet" href="reveal.js/css/print/pdf.css" type="text/css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- All of this class' project activity can be seen in the commits from June 24, 2014 here: https://github.com/cherimarie/worstsong/commits/master -->
+      <div class="slides">
+        <!-- Opening slide -->
+        <section>
+          <img src = "images/gdi_logo_badge.png">
+          <h3>Intro to Rails</h3>
+          <p>slides: http://cherimarie.github.io/gdi-rails</p>
+        </section>
+        
+        <!-- Welcome-->
+        <section>
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+        
+        <section>
+          <h3>What we will cover today</h3>
+          <ul>
+            <li>User Authentication with Devise Gem</li>
+            <li>Deploying to Heroku</li>
+            <li>Seed Data (time permitting)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Gems</h3>
+          <p><strong>Gems</strong> are ruby libraries or programs. They're simultaneously the best and worst thing about Rails.</p>
+          <p>You can add all sorts of amazing functionality to your app with very little effort via a gem, but then you have to deal with versioning and conflicts between gems.</p>
+          <p>Gems are specified in your app's Gemfile. Running 'bundle install' ensures you have all gems available locally, and updates your Gemfile.lock file.</p>
+          <p>It is very common to break up your Gemfile into groups that correspond to Rails environments: test, development, production.</p>
+        </section>
+
+<!-- Instructor and students work together through installing and using Devise, including discussion of Gems/Gemfile, Bundler, reading documentation, appraising quality of a gem, link_to in ERB, and before filters. Approx 60 minutes.-->
+        <section>
+          <h3>Devise</h3>
+          <p><a href="https://github.com/plataformatec/devise" alt="Devise gem">Devise documentation</a></p>
+          <p>We are going to follow the documentation's instructions, as it is well maintained and accurate.</p>
+        </section>
+
+        <section>
+          <h3>Devise</h3>
+          <p>As of this writing, steps for Devise setup are:</p>
+          <ol>
+            <li>Add Devise to Gemfile</li>
+            <li>Bundle Install</li>
+            <li>Run Devise generator</li>
+            <li>Do the things suggested in setup message</li>
+            <li>Generate devise User model</li>
+            <li>Run 'rake db:migrate'</li>
+            <li>Create sign up/in/out links in application.html.erb</li>
+            <li>Add before filter for protected actions in a controller</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>Heroku</h3>
+          <p>Tool check!</p>
+          <pre><code class="command-line">
+$ heroku --help
+$ git --help             
+          </code></pre>
+          <p>If you don't get help menus back, get a TA to help you install Heroku and Git correctly.</p>
+        </section>
+
+<!-- BREAK and time for anyone lacking tools to catch up --> 
+        <section>
+          <h3>Heroku</h3>
+          <p>Let's follow <a href="http://curriculum.railsbridge.org/intro-to-rails/deploying_to_heroku" alt="Railsbridge deploy to heroku instructions">Railsbridge's instructions</a>.</p>
+          <p>There is one correction- step 4 on the next slide.</p>
+        </section>
+
+<!-- Instructor leads students in the steps necessary to deploy an app to Heroku, including discussion on different databases, groups in Gemfile, database configuration, the Heroku command line tools. Approx 25 minutes. --> 
+        <section>
+          <h3>Heroku</h3>
+          <p>As of this writing, steps to deploy to Heroku are:</p>
+          <ol>
+            <li>Create Heroku app in command line</li>
+            <li>Edit the Gemfile to add Postgres to appropriate groups</li>
+            <li>Apply the Gemfile changes</li>
+            <li>Change the production group in config/database.yml to:
+            <pre><code class="ruby">
+production:
+  adapter: postgresql
+  database: db/production            
+          </code></pre></li>
+            <li>Add and commit changes with Git</li>
+            <li>Push to heroku</li>
+            <li>Run database migrations and seed data in terminal</li>
+            <li>Visit application, be super proud!</li>
+          </ol>
+        </section>
+
+<!-- Seeds. Approx 15 minutes. --> 
+        <section>
+          <h3>Seeds</h3>
+          <p>In db/seeds.rb, you can write code that will populate the database. Syntax is exactly like the Rails Console, so it should look familiar to you.</p>
+          <p>Whenever the app is setup on a new machine (your collaborator's, Heroku's servers, etc), 'rake db:seed' can be run, and the database will be populated with the data from seed file. Sweet!</p>
+        </section>
+
+        <section>
+          <h3>Seeds</h3>
+          <p>In my db/seeds.rb file, I added this: </p>
+          <pre><code class="ruby">
+Artist.create(name: "Shonen Knife", hometown: "Osaka")
+Artist.create(name: "Shakira", hometown: "Barranquilla")
+Artist.create(name: "Beyonce", hometown: "Houston")
+Artist.create(name: "Teagan and Sara", hometown: "Calgary")
+        </code></pre>
+        </section>
+
+        <section>
+          <h3>Seeds</h3>
+          <p>After saving db/seeds.rb, in the terminal run:</p>
+          <pre><code class="command-line">
+$ rake db:seed
+          </code></pre>
+          <p>After pushing your changes to Heroku, in the terminal run:</p>
+          <pre><code class="command-line">
+$ heroku run rake db:seed
+          </code></pre>
+        </section>
+
+<!-- Questions/resources for further learning. Approx 10 mins. -->
+        <section>
+          <h3>Questions</h3>
+          <img src="questioncat.jpg" />
+        </section>
+
+        <section> 
+          <h3>Further Resources</h3>
+            <table style="font-size: 24px; line-height: 1.5em;">
+              <tr>
+                <td><a href="http://www.ruby-doc.org/">Ruby-doc.org</a></td>
+                <td>Official Ruby documentation</td>
+              </tr>
+              <tr>
+                <td><a href="http://guides.rubyonrails.org/">Ruby on Rails Guides</a></td>
+                <td>Excellent documentation for Rails</td>
+              </tr>
+              <tr>
+                <td><a href="http://railscasts.com/">Rails Casts</a></td>
+                <td>Screencasts on how to do almost everything with Rails</td>
+              </tr>
+              <tr>
+                <td><a href="http://ruby.railstutorial.org/">The Rails Tutorial</a></td>
+                <td>Great free (HTML version) book with step-by-step instructions on building Rails apps</td>
+              </tr>
+              <tr>
+                <td><a href="http://rubygems.org/">RubyGems.org</a></td>
+                <td>Listing of all available Gems</td>
+              </tr>
+              <tr>
+                <td><a href="http://ruby.learncodethehardway.org/">Ruby the Hard Way</a></td>
+                <td>Fun, free (HTML version) book with great information about programming</td>
+              </tr>
+              <tr>
+                <td><a href="http://girldevelopit.com/">Girl Develop It</a></td>
+                <td>Local workshops, events, and coding sessions with awesome people &lt;3</td>
+              </tr>
+            </table>
+          </section>
+                                                      
+       
+      </div>
+      <footer>
+        <div class="copyright">
+          Intro to Rails
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+    </div>
+
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+
+  </body>
+</html>
