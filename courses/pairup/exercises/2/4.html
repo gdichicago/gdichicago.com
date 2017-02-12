@@ -1,0 +1,45 @@
+---
+layout: default
+title: Girl Develop It - Pair Up
+---
+
+<section>
+  <article>
+    <h1>Level 2: Word guesser</h1>
+    <p>You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).</p>
+    <ul>
+      <li>Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '_', '_', '_' and end with 'F', 'O', 'X').</li>
+      <li>
+        Write a function called <code>guessLetter</code> that will:
+        <ul>
+          <li>Take one argument, the guessed letter.</li>
+          <li>Iterate through the word letters and see if the guessed letter is in there.</li>
+          <li>If the guessed letter matches a word letter, changed the guessed letters array to reflect that.</li>
+          <li>When it's done iterating, it should log the current guessed letters ('F__')</li>
+          <li>and congratulate the user if they found a new letter.</li>
+          <li>It should also figure out if there are any more letters that need to be guessed,</li>
+          <li>and if not, it should congratulate the user for winning the game.</li>
+        </ul>
+      </li>
+      <li>Pretend you don't know the word, and call <code>guessLetter</code> multiple times with various letters to check that your program works.</li>
+      <li><strong>Bonus:</strong> Make it more like Wheel of Fortune:
+        <ul>
+          <li>Start with a reward amount of $0</li>
+          <li>Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.</li>
+          <li>When they guess the word, log their final reward amount.</li>
+        </ul>
+      </li>
+      <li><strong>Bonus:</strong> Make it like Hangman:
+        <ul>
+          <li>Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.</li>
+          <li>Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.</li>
+          <li>Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.</li>
+        </ul></li>
+      </li>
+    </ul>
+    <button class="btn" onclick="showSolution(1)">See Solution</button>
+    <div id="solution1" style="display:none;">
+      <script src="https://gist.github.com/feministy/1e6ef51ab33f875715d0.js"></script>
+    </div>
+  </article>
+</section>
