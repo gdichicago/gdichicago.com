@@ -1,3 +1,5 @@
+Content created by GDI San Francisco, maintained by GDI Chicago.
+
 # Algorithms 101
 
 ## Course Description
