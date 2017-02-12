@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  
+  $(document).ready(function() {
+  console.log("testing my rights")
   //Class 2 Nth-Child Pseudo-Selector
   $(".nth-child-table").on("click", "input[type='button']", function() {
     var parent     = $(this).parents(".nth-child-table"),
@@ -9,7 +9,7 @@ $(document).ready(function() {
     parent.find("tbody tr").css("background-color", "");
     rows.css("background-color", "red");
   });
-  
+
   ///Class 2 changing border radius
   $(".border-radius").on("change", "input", function() {
     var parent     = $(this).parents(".border-radius"),
@@ -38,7 +38,7 @@ $(document).ready(function() {
     parent.find(".example").css("transition-duration", new_value + "s");
   });
 
-  
+
 
   $(".box-shadow .example1").on("change", "input", function() {
     var parent    = $(this).closest("section"),

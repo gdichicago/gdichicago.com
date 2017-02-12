@@ -81,7 +81,7 @@ li.opera {
   margin: 0 auto;
   width: 700px;
   overflow: hidden;
-  *zoom: 1;
+  zoom: 1;
 }
 
 /* line 51, source/slides.css */
@@ -201,7 +201,7 @@ li.opera {
 /* line 139, source/slides.css */
 .border-radius {
   overflow: hidden;
-  *zoom: 1;
+  /**zoom: 1;*/
 }
 /* line 141, source/slides.css */
 .border-radius article {
@@ -723,7 +723,7 @@ article.transform-scale {
   padding: 100px;
   width: 700px;
   overflow: hidden;
-  *zoom: 1;
+  /**zoom: 1;*/
 }
 /* line 458, source/slides.css */
 article.transform-scale div {
@@ -781,7 +781,7 @@ article.transform-rotate {
   padding: 100px;
   width: 700px;
   overflow: hidden;
-  *zoom: 1;
+  /**zoom: 1;*/
 }
 /* line 498, source/slides.css */
 article.transform-rotate div {
@@ -835,7 +835,7 @@ article.transform-translate {
   padding: 100px;
   width: 700px;
   overflow: hidden;
-  *zoom: 1;
+  /**zoom: 1;*/
 }
 /* line 532, source/slides.css */
 article.transform-translate div {
@@ -881,7 +881,7 @@ article.transform-origin {
   padding: 100px;
   width: 700px;
   overflow: hidden;
-  *zoom: 1;
+  /**zoom: 1;*/
 }
 /* line 563, source/slides.css */
 article.transform-origin div {
