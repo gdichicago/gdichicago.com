@@ -40,7 +40,7 @@ h6 {font-size: 1rem; font-weight: 300;}
 .header {
     text-align: center;
     top: auto;
-    margin: 3em auto;
+    margin: 3em 1em;
 }
 
 .sidebar {
