@@ -230,7 +230,7 @@ font-size: 75%;
 }
 .footer {
     text-align: center;
-    padding: 1em 0;
+    padding: 1em;
 }
 .footer ul {
 list-style-type: none;
@@ -256,7 +256,7 @@ display: inline;
     }
 
     .header {
-        margin: 2em 2em 0;
+        margin: 2em 1em;
         text-align: right;
     }
 
