@@ -58,6 +58,21 @@
         </section>
 
         <section>
+          <h3>About the Instuctor</h3>
+          <ul>
+            <li>Shelby Heinecke</li>
+            <li>Math/CS PhD Candidate at UIC</li>
+            <li>Several years of teaching math/cs courses</li>
+            <li>How I use git/github:</li>
+              <ul>
+              <li>website</li>
+              <li>research code</li>
+              <li>portfolio</li>
+              </ul>
+          </ul>
+        </section>
+
+        <section>
           <h3>Welcome!</h3>
           <div class = "left-align">
           <p class = "blue">Tell us about yourself.</p>
@@ -125,12 +140,12 @@
           </section>
           <section>
             <h3>Version Control Distribution</h3>
-            <a href = "http://redmonk.com/sogrady/2013/12/19/dvcs-and-git-2013/" target="_blank" alt ="Version Control Statistics: 2010 vs 2013"><img src = "images/2013_vc_market_share.png" alt ="Version control share between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
+            <a href = "http://sogrady-media.redmonk.com/sogrady/files/2013/12/ohloh-vcs-type-dist-wm.png" target="_blank" alt ="Version Control Statistics: 2010 vs 2013"><img src = "images/ohloh-vcs-type-dist-wm.png" alt ="Version control share between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
           </section>
 
           <section>
             <h3>Version Control Change</h3>
-            <a href = "http://redmonk.com/sogrady/2013/12/19/dvcs-and-git-2013/" target="_blank" alt ="Version Control Statistics: 2010 vs 2013"><img src = "images/2013_change_in_vc_popularity.png" alt ="Version control popularity change between 2010 and 2013 between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
+            <a href = "http://sogrady-media.redmonk.com/sogrady/files/2013/12/ohloh-vcs-dist-wm.png" target="_blank" alt ="Version Control Statistics: 2010 vs 2013"><img src = "images/ohloh-vcs-dist-wm.png" alt ="Version control popularity change between 2010 and 2013 between Bazaar, CVS, Git, Mercurial and Subversion"/></a>
             </section>
         </section>
         <!-- Git-->
@@ -158,15 +173,19 @@
             <p>Setup ssh keys</p>
             <pre><code contenteditable class ="command-line">
              $ cd ~/.ssh
+# If you don't already have this folder, don't worry; keep going.
             </code></pre>
             <pre><code contenteditable class ="command-line">
 $ ssh-keygen -t rsa -C "your_email@example.com"
+# Use your github email address here.
 # Generating public/private rsa key pair.
 # Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
             </code></pre>
             <pre><code contenteditable class ="command-line">
 Enter passphrase (empty for no passphrase): [Type a passphrase]
 # Enter same passphrase again: [Type passphrase again]
+# Each time your local repo talks to github, it will prompt you for
+#this passphrase.
             </code></pre>
           </section>
           <section>
@@ -178,6 +197,12 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
 # The key fingerprint is:
 # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
             </code></pre>
+
+            <pre><code contenteditable class ="command-line">
+$ pbcopy < ~/.ssh/id_rsa.pub
+# Copies the id_rsa.pub file to your clipboard
+            </code></pre>
+
           </section>
           <section>
             <h3>Installation and Setup</h3>
@@ -274,6 +299,18 @@ $ git config --list
               </code></pre>
           </section>
           <section>
+          <h4>Exercise</h4>
+          <ol>
+            <li>Commit 5 new lines to your hellow_world.txt file. Then remove one of the lines as a 6th commit.</li>
+            <li>Open your git log</li>
+            <li>Use git diff (see below) to compare a pair of your commits using their hash numbers</li>
+            <li>Exit diff mode by typing "q"</li>
+          </ol>
+          <pre><code contenteditable class ="command-line">
+  git diff [HASH1 HERE] [HASH2 HERE]
+              </code></pre>
+          </section>
+          <section>
             <h3>Look at our progress, visually</h3>
             <pre><code contenteditable class ="command-line">
   gitk
@@ -311,7 +348,7 @@ git checkout hello_world.txt
           </section>
           <section>
             <h3>Nobody's Perfect</h3>
-            <h4>Undoing staged changes</h4>
+            <h4>Undoing committed changes</h4>
             <div class = "fragment">
               <p>Open hello_world.txt and add some new text</p>
               <pre><code contenteditable class ="command-line">
@@ -383,6 +420,19 @@ git checkout master
 git checkout version2
             </code></pre>
           </section>
+          <section>
+            <h3>Branching</h3>
+            <h4>Exercise</h4>
+            Branching from a previous commit:
+            <ol>
+              <li>In master branch, use git log to find a previous commit to start from.</li>
+              <li>Use git checkout [HASH] to load that version to the HEAD</li>
+              <li>Start a new branch</li>
+              <li>Open hello_world - what does it look like?</li>
+              <li>Commit a change. Look at the git log.</li>
+              <li>Switch to master branch. Look at the git log. Do you see the newly commited change?</li>
+            </ol>
+          </section>
         </section>
         <!-- Merging-->
         <section>
@@ -395,6 +445,17 @@ git checkout master
 git merge version2
             </code></pre>
             <p>*rebase is another option, but will not be covered in this workshop</p>
+          </section>
+               <section>
+            <h3>Merging</h3>
+            <h4>Exercise</h4>
+            <p>For which scenarios would a merge conflict occur?</p>
+            <ol>
+              <li>I only change line 30 and my colleague changes only line 10.</li>
+              <li>I delete line 10 and my colleague changes line 10.</li>
+              <li>I change line 10 and my colleague deletes line 10.</li>
+              <li>We both change the contents of line 30.</li> 
+              </ol>
           </section>
           <section>
             <h3>Merging</h3>
@@ -494,6 +555,14 @@ git commit -m "Fixing merging conflicts"
 git push origin master
             </code></pre>
           </section>
+          <section>
+            <h4>Exercise</h4>
+            <ol>
+            <li>Go to your github repo and create a new text file called Test2. </li>
+            <li>Add a line to the Readme.</li>
+            <li> Pull these changes to your local repository.</li>
+            </ol>
+          </section>
         </section>
         <!-- Fork a repository-->
         <section>
@@ -507,11 +576,13 @@ git push origin master
           <section>
             <h3>Forking</h3>
             <img src = "images/bootcamp_3_fork.jpg" alt ="How to fork a repository. Image from https://help.github.com/articles/fork-a-repo"/>
+            <h4>Exercise</h4>
+            <p>Fork octocat's "Spoon-Knife" repo</p>
           </section>
           <section>
             <h3>Forking</h3>
             <h4>Cloning</h4>
-            <p>Clone to get a local repository of your fork
+            <p>Clone to get a local repository of your fork</p>
             <pre><code contenteditable class ="command-line">
 cd ../
 
@@ -525,6 +596,8 @@ git remote add upstream https://github.com/original-username/FORKED-REPO-NAME.gi
 git fetch upstream
 # Pulls in changes not present in your local repository, without modifying your files
             </code></pre>
+            <h4>Exercise</h4>
+            <p>Clone your fork of the Spoon-Knife repo</p>
           </section>
         </section>
         <!-- Pull requests-->
@@ -536,10 +609,14 @@ git fetch upstream
               <li class = "fragment">These changes will not affect the original repository</li>
               <li class = "fragment">If you would like to get your changes to be incorporated into the original repo, you can submit a pull request</li>
             </ul>
+            <h4>Exercise</h4>
+            <p>Make some changes to one of more of the files. Add, commit, and push the changes to your fork. </p>
           </section>
           <section>
             <h3>Starting a pull request</h3>
             <img src = "images/click-pull-request.png" alt ="How to initiate a pull request. Image from https://help.github.com/articles/using-pull-requests"/>
+             <h4>Exercise</h4>
+             <p>Send octocat a pull request.</p>
           </section>
           <section>
             <h3>Previewing  and sending pull request</h3>
@@ -551,6 +628,34 @@ git fetch upstream
           </section>
         </section>
         <!-- -->
+      <section>
+          <h2>Summary</h2>
+            <h4>Local Repo</h4>
+            <ul>
+              <li>add, stage</li>
+              <li>commit</li>
+              <li>diff</li>
+              <li>delete, revert</li>
+              <li>branch, merge</li>
+            </ul>
+            <br>
+            <br>
+            <h4>Remote Repo</h4>
+            <ul>
+              <li>push, pull</li>
+              <li>fork, clone</li>
+              <li>pull request</li>
+            </ul>
+        </section>
+
+        <section>
+          <h2>Bonus Content</h2>
+          <ul>
+            <li>Open Source Projects</li>
+            <li>GitHub Desktop</li>
+            <li>GitHub Pages</li>
+          </ul>
+        </section>
         <section>
           <h2>Questions?</h2>
           <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
