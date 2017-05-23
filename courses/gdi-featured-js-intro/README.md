@@ -1,6 +1,4 @@
-##Intro to JavaScript
-Slides and materials are hosted at [http://girldevelopit.github.io/gdi-featured-js-intro/](http://girldevelopit.github.io/gdi-featured-js-intro).
-
+## Intro to JavaScript
 This is the Girl Develop It Intro JavaScript course. Material based on original material by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston, Leo Newball, and Sylvia Pellicore.
 
 The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.
